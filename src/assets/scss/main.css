@@ -1,0 +1,123 @@
+@media (min-width: 1024px) {
+  body {
+    background-color: #f6f5f7;
+  }
+  .main_title {
+    color: black;
+    margin-top: 20%;
+    font-size: larger;
+  }
+}
+body {
+  background-color: #f6f5f7;
+}
+
+.main_title {
+  color: black;
+  margin-top: 3%;
+  font-size: x-large;
+}
+
+.map_sample_line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 2px solid rgb(0, 0, 0);
+}
+
+.map {
+  margin-left: 2%;
+}
+
+.map_border {
+  background-color: white;
+  width: 525px;
+  height: 495px;
+  margin-top: 2%;
+  padding-top: 0.5%;
+  border-radius: 10px;
+}
+
+.map_body {
+  background-color: rgb(190, 243, 243);
+  border: 1px solid white;
+  width: 500px;
+  height: 450px;
+  margin-top: 4%;
+  margin-left: 2%;
+  border-radius: 10px;
+}
+.map_body p {
+  margin-top: 3%;
+}
+.map_body #location1 {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: greenyellow;
+  margin-left: 190px;
+}
+.map_body #location2 {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: greenyellow;
+  margin-left: 110px;
+}
+.map_body #location3 {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: greenyellow;
+  margin-left: 200px;
+}
+.map_body #location4 {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: greenyellow;
+  margin-left: 290px;
+}
+.map_body #location5 {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: greenyellow;
+  margin-left: 176px;
+}
+.map_body #location6 {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: greenyellow;
+  margin-left: 132px;
+}
+.map_body #location7 {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: greenyellow;
+  margin-left: 320px;
+}
+.map_body #location8 {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: greenyellow;
+  margin-left: 277px;
+}
+.map_body #location9 {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: greenyellow;
+  margin-left: 68px;
+}
+.map_body #location10 {
+  width: 25px;
+  height: 25px;
+  border-radius: 30px;
+  background-color: greenyellow;
+  margin-left: 146px;
+}/*# sourceMappingURL=main.css.map */
