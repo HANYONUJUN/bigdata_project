@@ -3,18 +3,6 @@
 $background:#f6f5f7;
 $text_color:black;
 
-@include desktop{
-    body{
-        background-color: $background;
-    }
-    
-    .main_title{
-        color: $text_color;
-        margin-top: 20%;
-        font-size: larger;
-    }
-}
-
 
 body{
     background-color: $background;
@@ -35,111 +23,19 @@ body{
 }
 
 .map{
+    width: 500px;
+    height: 500px;
+    margin-top: 2%;
     margin-left: 2%;
 }
 
 .map_border{
     background-color: white;
-    width: 523px;
-    height: 465px;
+    width: 522px;
+    height: 520px;
     margin-top: 2%;
     padding-top: 0.5%;
     border-radius: 10px;
-}
-
-.map_body{
-    background-color: rgb(190, 243, 243);
-    border: 1px solid white;
-    width: 500px;
-    height: 450px;
-    margin-top: 1%;
-    margin-left: 2%;
-    border-radius: 10px;
-    
-    p{
-        margin-top:3%;
-    }
-
-    #location1{
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        background-color: greenyellow;
-        margin-left:190px;
-    }
-
-    #location2{
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        background-color: greenyellow;
-        margin-left:110px;
-    }
-
-    #location3{
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        background-color: greenyellow;
-        margin-left:200px;
-    }
-
-    #location4{
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        background-color: greenyellow;
-        margin-left:290px;
-    }
-
-    #location5{
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        background-color: greenyellow;
-        margin-left:176px;
-    }
-
-    #location6{
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        background-color: greenyellow;
-        margin-left:132px;
-    }
-
-    #location7{
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        background-color: greenyellow;
-        margin-left:320px;
-    }
-
-    #location8{
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        background-color: greenyellow;
-        margin-left:277px;
-    }
-
-    #location9{
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        background-color: greenyellow;
-        margin-left:68px;
-    }
-
-    #location10{
-        width: 25px;
-        height: 25px;
-        border-radius: 30px;
-        background-color: greenyellow;
-        margin-left:146px;
-    }
-
 }
 
 .map_writing{
@@ -149,3 +45,5 @@ body{
         font-size: xxx-large;
     }
 }
+
+
