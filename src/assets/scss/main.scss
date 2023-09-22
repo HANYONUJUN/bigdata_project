@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 @import '../reaction/utils';
 
 $background:#f6f5f7;
@@ -20,6 +21,35 @@ body{
     align-items: center;
     background-color: white;
     border: 2px solid rgb(0, 0, 0);
+
+}
+
+.map_writing{
+    h2{
+        font-size: xxx-large;
+        @keyframes fadeInRight{
+            0%{
+                opacity: 0;
+                transform: translate3d(100%,0,0);
+            }
+            to{
+                opacity: 1;
+                transform: translateZ(0);
+            }
+        }
+    }
+    margin-top:-23%;
+    margin-left: 590px;
+    font-weight: 200;
+    animation: fadeInRight 1s;
+    
+    #h_line_1{
+        text-align: center;
+    }
+
+    #h_line_2{
+        text-align: center;
+    }
 }
 
 .map{
@@ -38,12 +68,5 @@ body{
     border-radius: 10px;
 }
 
-.map_writing{
-    h2{
-        margin-top: -280px;
-        margin-left: 700px;
-        font-size: xxx-large;
-    }
-}
 
 

@@ -1,29 +1,31 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  <div class="main_title">
-   <h1>안녕하세요!</h1>
+<div class="container">
+
+  <div class="main_title" data-bgcolor="#364652">
+    <h1>안녕하세요!</h1>
   </div>
 
-<div class="map_sample_line"></div>
+  <div class="map_sample_line"></div>
   
-<div class="map"> 
- <div class="map_border"> 
-  <div class="map">
-    <l-map :zoom="zoom" :center="center">
-      <l-tile-layer :url="url"></l-tile-layer>
-      <l-marker :lat-lng="center">
-        <l-popup>여기는 서울입니다!</l-popup>
-      </l-marker>
+  <div class="map" data-bgcolor="#f6f5f7"> 
+    <div class="map_border"> 
+      <div class="map">
+        <l-map :zoom="zoom" :center="center">
+          <l-tile-layer :url="url"></l-tile-layer>
+            <l-marker :lat-lng="center">
+              <l-popup>여기는 서울입니다!</l-popup>
+            </l-marker>
         </l-map>      
     </div>
   </div>
 </div>
 
-<div class="map_writing">
-  <h2>지도를 통해서 각 예술 활동에 <br>
-    대한 위치와 정보를 확인해보세요!</h2>
-</div>
+  <div class="map_writing">
+    <h2 id="h_line_1">지도를 통해서 각 예술 활동에 대한</h2>
+    <h2 id="h_line_2">위치와 정보를 확인해보세요!</h2>
+  </div>
 
+</div>
 </template>
 
 <script lang="ts">
