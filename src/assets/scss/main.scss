@@ -7,6 +7,12 @@ $text_color:black;
 
 body{
     background-color: $background;
+    min-height: 100vh;
+}
+
+#section{
+    position: relative;
+    min-height: 100vh;
 }
 
 .main_title{
@@ -38,7 +44,7 @@ body{
             }
         }
     }
-    margin-top:-23%;
+    margin-top:-40%;
     margin-left: 590px;
     font-weight: 200;
     animation: fadeInRight 1s;
@@ -49,6 +55,20 @@ body{
 
     #h_line_2{
         text-align: center;
+    }
+}
+
+.next_btn{
+    margin-left: 62%;
+    margin-top:7%;
+    button{
+        border: none;
+        width: 40%;
+        padding: 20px;
+        border-radius: 30px;
+        background: linear-gradient(lightCyan, skyBlue, deepSkyBlue);
+        color:white;
+
     }
 }
 
