@@ -1,12 +1,10 @@
 <template>
- <div>
+ <div id="selected_input">
   <select id="jsonFile" v-model="selectedFile">
       <option v-for="file in jsonFiles" :value="file">{{ file }}</option>
     </select>
-
     <label for="location">지역 검색:</label>
     <input id="location" v-model="searchQuery" placeholder="지역을 입력하세요" @keyup.enter="searchLocation" />
-
    <hr>
  </div>
 
@@ -23,6 +21,7 @@
     </LMarker>
   </LMap>
 </div>
+<div id="street-view" ref="streetView"></div>
 </template>
 
 <script lang="ts">
@@ -30,6 +29,8 @@ import { defineComponent } from 'vue';
 import axios from 'axios';
 import { LMap, LTileLayer, LMarker, LPopup } from '@vue-leaflet/vue-leaflet';
 import 'leaflet/dist/leaflet.css';
+
+
 
 interface Marker {
   name: string;
@@ -91,6 +92,7 @@ export default defineComponent({
         .catch((error) => console.error(error));
     },
 
+
     searchLocation() {
       const geocodingApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${this.searchQuery}&limit=1&appid=MY_API_KEY`;
       axios
@@ -110,7 +112,12 @@ export default defineComponent({
 });
 </script>
   
-<style>
+<style lang="scss">
+@import "../reaction/utils";
+
+$breakpoint-mobile: 768px;
+$breakpoint-desktop: 1024px;
+
   #map{
     height: 680px;
     border: 1px solid black;
@@ -126,4 +133,16 @@ export default defineComponent({
   }
 }
 
+// 모바일용 스타일
+@include mobile {
+  #map {
+    height: 550px;
+  }
+  #selected_input {
+     display: inline-block;
+     .input{
+        width: 130px;
+     }
+  }
+}
 </style>
