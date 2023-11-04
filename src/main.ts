@@ -1,10 +1,8 @@
 import { createApp } from 'vue'
-import App from '../src/assets/components/main.vue';
-import "./assets/scss/main.scss";
-import 'leaflet/dist/leaflet.css';
-import router from  "./router";
+import router from './router'
+import App from './App.vue';
 
-createApp(App).use(router).mount('#app');
+createApp(App).use(router).mount('#app')
 
 
 
