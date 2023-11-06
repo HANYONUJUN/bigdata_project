@@ -1,0 +1,60 @@
+@import "../reaction/utils";
+
+$breakpoint-mobile: 768px;
+// 모바일용 스타일
+@include mobile {
+  #map {
+    height: 700px;
+    zoom: 70%;
+    border: 4px solid black;
+  }
+
+  .selected_input {  
+    input{
+        width: 100px;
+        height: 20px;
+        border-radius: 20px;
+        border: 1px solid black;
+        font-size: x-small;
+        text-align: center;
+     }
+
+     #jsonFile{
+        width: 100px;
+        height: 23px;
+        border-radius: 20px;
+        border: 1px solid black;
+        margin-right: 5%;
+        margin-left: 0.5%;
+     }
+
+     #json_title{
+        font-size: 15px;
+    }
+
+    #location_title{
+        font-size: 15px;
+    }
+  }
+  
+  #back-btn {
+    width:32%;
+    padding: 3%;
+    margin-top: 8%;
+    border-radius: 30px;
+    border: 0.5px solid black;
+  }
+
+  #pop-up{
+    width: 650px;
+    font-size: 15px;
+  }
+
+  #streetview-image{
+    width: 310px;
+    height: 300px;
+    border: 1px solid black;
+  }
+
+
+}
