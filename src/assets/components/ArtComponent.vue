@@ -24,14 +24,18 @@
         <LPopup id="pop-up">
           {{ marker.name }}<br>
           {{ marker.tel }}<br>
-          <a href="{{ marker.home }}">{{ marker.home }}</a><br>
+          <a :href="marker.home" target="_blank">{{ marker.home }}</a><br>
           <img :src="marker.streetViewImageUrl" id="streetview-image"/>
         </LPopup>
       </LMarker>
     </LMap>
   </div>
 
-  <button type="button" @click="goback" id="back-btn">이전 페이지로</button>
+  <div class="meun_bar">
+    <button type="button" @click="goback" id="back-btn">
+      <i class="bi bi-house-door"></i>
+    </button>
+  </div>
 </template>
 
 <script lang="ts">

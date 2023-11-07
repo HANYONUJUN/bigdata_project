@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Main from './assets/components/main.vue'
-import Art from './assets/components/art.vue'
+import Main from './assets/components/MainComponent.vue'
+import Art from './assets/components/ArtComponent.vue'
 
 const routes = [
   

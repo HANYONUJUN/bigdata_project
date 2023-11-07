@@ -11,7 +11,7 @@ function useArtData() {
     var searchQuery = vue_1.ref('');
     var selectedFile = vue_1.ref('');
     var jsonFiles = vue_1.ref(['art_galleries.json', 'museum_data.json']);
-    var streetViewApiKey = vue_1.ref('');
+    var streetViewApiKey = vue_1.ref(process.env.VUE_APP_API_KEY_google);
     var street_view_api_url = vue_1.ref('https://maps.googleapis.com/maps/api/streetview');
     var getData = function () {
         var selectedFilePath = "/api_json/" + selectedFile.value;
@@ -33,10 +33,10 @@ function useArtData() {
             });
             markers.value = markersData;
         })["catch"](function (error) { return console.error(error); });
-        console.log(process.env.ID);
+        console.log(process.env.VUE_APP_API_KEY_google);
     };
     var searchLocation = function () {
-        var geocodingApiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + searchQuery.value + "&limit=1&appid=";
+        var geocodingApiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + searchQuery.value + "&limit=1&appid=" + process.env.VUE_APP_API_KEY_weather;
         axios_1["default"]
             .get(geocodingApiUrl)
             .then(function (response) {

@@ -1,0 +1,72 @@
+[
+    {
+        "name": "C 아트 뮤지엄",
+        "tel": "031-775-6945",
+        "home": "http://www.cartmuseum.com/",
+        "latitude": 37.39498571152227,
+        "longitude": 127.73784486624103
+    },
+    {
+        "name": "e스포츠 명예의 전당",
+        "tel": "070-4225-0975",
+        "home": "https://esportshistory.kr/",
+        "latitude": 37.57572173405217,
+        "longitude": 126.88996569528824
+    },
+    {
+        "name": "가천박물관",
+        "tel": "032-833-4747",
+        "home": "http://www.gcmuseum.org/",
+        "latitude": 37.41847734562459,
+        "longitude": 126.65762886431231
+    },
+    {
+        "name": "가톨릭대 전례박물관",
+        "tel": "02-740-9707",
+        "home": "http://museum.catholic.ac.kr/site/museum/main.do",
+        "latitude": 37.58494503830624,
+        "longitude": 127.00471552973158
+    },
+    {
+        "name": "가회민화박물관",
+        "tel": "02-741-0466",
+        "home": "http://www.gahoemuseum.org/new/",
+        "latitude": 37.581502413161594,
+        "longitude": 126.98522573129311
+    },
+    {
+        "name": "감귤박물관",
+        "tel": "064-767-3010",
+        "home": "http://citrus.seogwipo.go.kr/",
+        "latitude": 33.27157915558625,
+        "longitude": 126.60745668018015
+    },
+    {
+        "name": "강릉원주대학교 박물관",
+        "tel": "033-640-2596",
+        "home": "https://www.gwnu.ac.kr/sites/kor/index.do",
+        "latitude": 37.7688091087522,
+        "longitude": 128.87152780140968
+    },
+    {
+        "name": "강릉커피박물관",
+        "tel": "070-8888-0077",
+        "home": "http://cupper.kr/?act=info.page&pcode=sub3_1",
+        "latitude": 37.65223418706245,
+        "longitude": 128.78466067408047
+    },
+    {
+        "name": "강원대학교중앙박물관",
+        "tel": "033-250-8077",
+        "home": "http://www.kangwon.ac.kr/www/contents.do?key=1158&",
+        "latitude": 37.869553508487705,
+        "longitude": 127.74402963567155
+    },
+    {
+        "name": "강원도 산림박물관",
+        "tel": "033-248-6685",
+        "home": "http://www.gwpa.kr/",
+        "latitude": 37.92264584386447,
+        "longitude": 127.7251502996074
+    }
+]

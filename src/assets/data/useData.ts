@@ -1,6 +1,7 @@
 import { ref } from 'vue';
 import axios from 'axios';
 
+
 interface Marker {
   name: string;
   tel: string,
@@ -19,8 +20,9 @@ export default function useArtData() {
   const searchQuery = ref('');
   const selectedFile = ref('');
   const jsonFiles = ref(['art_galleries.json','museum_data.json']);
-  const streetViewApiKey = ref('');
+  const streetViewApiKey = ref(process.env.VUE_APP_API_KEY_google);
   const street_view_api_url = ref('https://maps.googleapis.com/maps/api/streetview');
+
 
   const getData = () => {
     const selectedFilePath = `/api_json/${selectedFile.value}`;
@@ -44,11 +46,11 @@ export default function useArtData() {
       })
       .catch((error) => console.error(error));
 
-      console.log(process.env.ID);
+      console.log(process.env.VUE_APP_API_KEY_google);
   };
 
   const searchLocation = () => {
-    const geocodingApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${searchQuery.value}&limit=1&appid=`;
+    const geocodingApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${searchQuery.value}&limit=1&appid=${process.env.VUE_APP_API_KEY_weather}`;
     axios
       .get(geocodingApiUrl)
       .then((response) => {
@@ -83,6 +85,7 @@ export default function useArtData() {
     window.history.back();
   }
 
+
   return {
     zoom,
     center,
@@ -98,6 +101,5 @@ export default function useArtData() {
     searchLocation,
     showBuildingPhoto,
     goback,
-    
   };
 }
