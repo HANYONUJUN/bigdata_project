@@ -33,20 +33,23 @@ export default function useArtData() {
         const markersData: Marker[] = [];
         data.forEach((item: any) => {
           if (item.latitude !== undefined && item.longitude !== undefined) {
-            markersData.push({
+            const marker: Marker = {
               name: item.name,
               tel: item.tel,
               home: item.home,
               latitude: item.latitude,
               longitude: item.longitude,
-            });
+            };
+            // Street View 이미지 URL 설정
+            const streetViewApiUrl = `${street_view_api_url.value}?size=600x400&location=${marker.latitude},${marker.longitude}&key=${streetViewApiKey.value}`;
+            marker.streetViewImageUrl = streetViewApiUrl;
+  
+            markersData.push(marker);
           }
         });
         markers.value = markersData;
       })
       .catch((error) => console.error(error));
-
-      console.log(process.env.VUE_APP_API_KEY_google);
   };
 
   const searchLocation = () => {
@@ -66,25 +69,23 @@ export default function useArtData() {
   };
 
   const showBuildingPhoto = (marker: Marker): void => {
-    const streetViewApiUrl = `${street_view_api_url.value}?size=600x400&location=${marker.latitude},${marker.longitude}&key=${streetViewApiKey.value}`;
-  
-    marker.streetViewImageUrl = streetViewApiUrl;
-
     // 이미지 요청 URL을 직접 img 태그의 src에 할당
     const imgElement: HTMLImageElement | null = document.getElementById('map') as HTMLImageElement;
     if (imgElement) {
-      imgElement.src = streetViewApiUrl;
+      if (marker.streetViewImageUrl) {
+        imgElement.src = marker.streetViewImageUrl;
+      } else {
+        console.error('Street View 이미지 URL이 없습니다.');
+      }
     } else {
       console.error('이미지를 표시할 요소를 찾을 수 없습니다.');
     }
-  
-    console.log(streetViewApiUrl);
   };
+  
 
   const goback = () => {
     window.history.back();
   }
-
 
   return {
     zoom,
