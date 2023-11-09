@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve --port 8754",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "start": "serve -s dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -44,6 +44,7 @@
     "node-sass": "^9.0.0",
     "sass": "^1.67.0",
     "sass-loader": "^13.3.2",
+    "serve": "^14.2.1",
     "typescript": "~4.5.5"
   },
   "eslintConfig": {

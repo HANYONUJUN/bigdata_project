@@ -13,6 +13,8 @@ function useArtData() {
     var jsonFiles = vue_1.ref(['art_galleries.json', 'museum_data.json']);
     var streetViewApiKey = vue_1.ref(process.env.VUE_APP_API_KEY_google);
     var street_view_api_url = vue_1.ref('https://maps.googleapis.com/maps/api/streetview');
+    var showModal = vue_1.ref(false);
+    var currentMarker = vue_1.ref(null);
     var getData = function () {
         var selectedFilePath = "/api_json/" + selectedFile.value;
         axios_1["default"]
@@ -22,18 +24,21 @@ function useArtData() {
             var markersData = [];
             data.forEach(function (item) {
                 if (item.latitude !== undefined && item.longitude !== undefined) {
-                    markersData.push({
+                    var marker = {
                         name: item.name,
                         tel: item.tel,
                         home: item.home,
                         latitude: item.latitude,
                         longitude: item.longitude
-                    });
+                    };
+                    // Street View 이미지 URL 설정
+                    var streetViewApiUrl = street_view_api_url.value + "?size=600x400&location=" + marker.latitude + "," + marker.longitude + "&key=" + streetViewApiKey.value;
+                    marker.streetViewImageUrl = streetViewApiUrl;
+                    markersData.push(marker);
                 }
             });
             markers.value = markersData;
         })["catch"](function (error) { return console.error(error); });
-        console.log(process.env.VUE_APP_API_KEY_google);
     };
     var searchLocation = function () {
         var geocodingApiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + searchQuery.value + "&limit=1&appid=" + process.env.VUE_APP_API_KEY_weather;
@@ -50,18 +55,28 @@ function useArtData() {
             }
         })["catch"](function (error) { return console.error(error); });
     };
-    var showBuildingPhoto = function (marker) {
-        var streetViewApiUrl = street_view_api_url.value + "?size=600x400&location=" + marker.latitude + "," + marker.longitude + "&key=" + streetViewApiKey.value;
-        marker.streetViewImageUrl = streetViewApiUrl;
-        // 이미지 요청 URL을 직접 img 태그의 src에 할당
-        var imgElement = document.getElementById('map');
-        if (imgElement) {
-            imgElement.src = streetViewApiUrl;
+    var saveMarkerData = function (marker) {
+        currentMarker.value = marker;
+        console.log(currentMarker.value);
+        if (!marker.streetViewImageUrl) {
+            console.error('Street View 이미지 URL이 없습니다.');
+        }
+    };
+    var showModalWithData = function () {
+        showModal.value = true;
+        var imgElement = document.getElementById('streetview-image');
+        if (imgElement && currentMarker.value && currentMarker.value.streetViewImageUrl) {
+            imgElement.src = currentMarker.value.streetViewImageUrl;
         }
         else {
             console.error('이미지를 표시할 요소를 찾을 수 없습니다.');
         }
-        console.log(streetViewApiUrl);
+    };
+    var openModal = function () {
+        showModal.value = true;
+    };
+    var closeModal = function () {
+        showModal.value = false;
     };
     var goback = function () {
         window.history.back();
@@ -79,8 +94,13 @@ function useArtData() {
         street_view_api_url: street_view_api_url,
         getData: getData,
         searchLocation: searchLocation,
-        showBuildingPhoto: showBuildingPhoto,
-        goback: goback
+        saveMarkerData: saveMarkerData,
+        showModalWithData: showModalWithData,
+        goback: goback,
+        showModal: showModal,
+        currentMarker: currentMarker,
+        openModal: openModal,
+        closeModal: closeModal
     };
 }
 exports["default"] = useArtData;

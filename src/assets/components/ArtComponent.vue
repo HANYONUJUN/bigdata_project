@@ -1,25 +1,27 @@
 <template>
  <div class="selected_input">
-  <span id="json_title">예술공간:</span>
+  <span id="json_title"></span>
 
   <select id="jsonFile" v-model="selectedFile">
-      <option v-for="file in jsonFiles" :value="file">{{ file }}</option>
+     <option v-for="file in jsonFiles" :value="file">{{ file.replace('.json', '') }}</option>
   </select>
 
-  <span id="location_title">지역 검색:</span> 
-    <input id="location" v-model="searchQuery" placeholder="지역을 입력하세요" @keyup.enter="searchLocation" />
+  <span id="location_title"></span> 
+    <input id="location" v-model="searchQuery" placeholder="지역 검색" @keyup.enter="searchLocation" />
 </div>
- <hr>
 
  <div id="map" ref="map">
   <LMap :zoom="zoom" :center="center">
     <LTileLayer :url="url" :attribution="attribution" />
-      <LMarker v-for="(marker, index) in markers" :key="index" :lat-lng="[marker.latitude, marker.longitude]"
+      <LMarker 
+        v-for="(marker, index) in markers" 
+        :key="index" 
+        :lat-lng="[marker.latitude, marker.longitude]"
         :style="{
         animation: 'bounce-in 0.5s',
         animationDelay: `${index * 0.1}s`
       }"
-      @click="showBuildingPhoto(marker)">
+      @click="saveMarkerData(marker)">
 
         <LPopup id="pop-up">
           {{ marker.name }}<br>
@@ -31,11 +33,28 @@
     </LMap>
   </div>
 
+
   <div class="meun_bar">
     <button type="button" @click="goback" id="back-btn">
       <i class="bi bi-house-door"></i>
     </button>
+
+    <button type="button" @click="openModal" id="modal-btn">
+      <i class="bi bi-house-door"></i>
+    </button>
   </div>
+
+
+  <div v-if="showModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" @click="closeModal">&times;</span>
+      <h2 v-if="currentMarker">{{ currentMarker.name }}</h2>
+      <p v-if="currentMarker">{{ currentMarker.tel }}</p>
+      <a v-if="currentMarker" :href="currentMarker.home" target="_blank">{{ currentMarker.home }}</a>
+      <img v-if="currentMarker" :src="currentMarker.streetViewImageUrl" id="streetview-image"/>
+    </div>
+  </div>
+
 </template>
 
 <script lang="ts">
@@ -44,6 +63,8 @@ import { LMap, LTileLayer, LMarker, LPopup } from '@vue-leaflet/vue-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../scss/art.scss';
 import useArtData from '../data/useData'; 
+import { marker } from 'leaflet';
+import { Marker } from '@vue-leaflet/vue-leaflet/dist/src/functions';
 
 export default defineComponent({
   components: {
@@ -60,6 +81,5 @@ export default defineComponent({
       ...artData,
     }
   }
-
 });
 </script>

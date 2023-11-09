@@ -1,7 +1,6 @@
 import { ref } from 'vue';
 import axios from 'axios';
 
-
 interface Marker {
   name: string;
   tel: string,
@@ -22,6 +21,9 @@ export default function useArtData() {
   const jsonFiles = ref(['art_galleries.json','museum_data.json']);
   const streetViewApiKey = ref(process.env.VUE_APP_API_KEY_google);
   const street_view_api_url = ref('https://maps.googleapis.com/maps/api/streetview');
+  const showModal = ref(false);
+  const currentMarker = ref<Marker | null>(null);
+
 
 
   const getData = () => {
@@ -68,20 +70,34 @@ export default function useArtData() {
       .catch((error) => console.error(error));
   };
 
-  const showBuildingPhoto = (marker: Marker): void => {
-    // 이미지 요청 URL을 직접 img 태그의 src에 할당
-    const imgElement: HTMLImageElement | null = document.getElementById('map') as HTMLImageElement;
-    if (imgElement) {
-      if (marker.streetViewImageUrl) {
-        imgElement.src = marker.streetViewImageUrl;
-      } else {
-        console.error('Street View 이미지 URL이 없습니다.');
-      }
+  const saveMarkerData = (marker: Marker): void => {
+    currentMarker.value = marker;
+    console.log(currentMarker.value);
+    
+    if (!marker.streetViewImageUrl) {
+      console.error('Street View 이미지 URL이 없습니다.');
+    } 
+  };
+  
+  const showModalWithData = (): void => {
+    showModal.value = true;
+  
+    const imgElement: HTMLImageElement | null = document.getElementById('streetview-image') as HTMLImageElement;
+    
+    if (imgElement && currentMarker.value && currentMarker.value.streetViewImageUrl) {
+      imgElement.src = currentMarker.value.streetViewImageUrl;
     } else {
       console.error('이미지를 표시할 요소를 찾을 수 없습니다.');
     }
   };
-  
+
+  const openModal = (): void => {
+    showModal.value = true;
+  };
+
+  const closeModal = () => {
+    showModal.value = false;
+  };
 
   const goback = () => {
     window.history.back();
@@ -100,7 +116,12 @@ export default function useArtData() {
     street_view_api_url,
     getData,
     searchLocation,
-    showBuildingPhoto,
+    saveMarkerData,
+    showModalWithData,
     goback,
+    showModal,
+    currentMarker,
+    openModal,
+    closeModal,
   };
 }
