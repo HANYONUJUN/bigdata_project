@@ -46,7 +46,7 @@
     </button>
 
     <button type="button" @click="infoModal" id="info-btn">
-      
+      <i class="bi bi-info-circle"></i>
     </button>
   </div>
 
