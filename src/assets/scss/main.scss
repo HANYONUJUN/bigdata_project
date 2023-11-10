@@ -58,6 +58,10 @@ $text_color:black;
 
     .next_btn{
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
       button{
         color: #ffffff;
         margin-top: 2%;
@@ -66,8 +70,6 @@ $text_color:black;
         border: 3px solid rgb(13, 233, 82);
         border-radius: 24px;
         text-decoration: none;
-        display: block;
-        margin-left: 127px;
         background-color: rgb(0, 0, 0);
        }
     }

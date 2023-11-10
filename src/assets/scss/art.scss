@@ -9,22 +9,29 @@
   }
 
   .selected_input {  
+    padding: 3%;
+    border-radius: 10px;
+    background-color: #dbd8d8;
+    
+    .selected_input_content{
+      margin-left: 6%;
+    }
+    
     input{
-        width: 100px;
-        height: 20px;
+        width: 110px;
+        height: 19px;
         border-radius: 5px;
         border: 1px solid black;
-        font-size: x-small;
-        margin-left: 10%;
+        margin-left: 2%;
      }
 
      #jsonFile{
-        width: 100px;
+        width: 120px;
         height: 23px;
         border-radius: 5px;
         border: 1px solid black;
         margin-right: 5%;
-        margin-left: 15%;
+        margin-left: 2%;
      }
 
      #json_title{
@@ -34,14 +41,42 @@
     #location_title{
         font-size: 15px;
     }
+
+    #building{
+     
+    }
   }
   
  .meun_bar{
-  
+
+    margin-top: 3%;
+    padding: 3%;
+    border-radius: 20px;
+    background-color: #dbd8d8;
+    display: flex;
+    justify-content: center;
+
     #back-btn {
       width:15%;
       padding: 5%;
-      margin-top: 2%;
+      margin-top: 1%;
+      border-radius: 30px;
+      border:none;
+    }
+
+    #modal-btn{
+      width:15%;
+      padding: 5%;
+      margin-top: 1%;
+      margin-left: 10%;
+      border-radius: 30px;
+      border:none;
+    }
+
+    #info-btn{
+      width:15%;
+      padding: 5%;
+      margin-top: 1%;
       margin-left: 10%;
       border-radius: 30px;
       border:none;
@@ -75,6 +110,23 @@
     background-color: rgba(0,0,0,0.4); 
     z-index: 1000;
   }
+
+  .info-modal{
+    display: flex;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+    z-index: 1000;
+
+    .info-content{
+      text-align: center;
+
+    }
+  }
   
   .modal-content {
     margin: auto;
@@ -83,6 +135,7 @@
     width: 80%; 
     background-color: #fff;   
   }
+
 
  
 }

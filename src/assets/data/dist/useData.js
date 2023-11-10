@@ -10,11 +10,12 @@ function useArtData() {
     var markers = vue_1.ref([]);
     var searchQuery = vue_1.ref('');
     var selectedFile = vue_1.ref('');
-    var jsonFiles = vue_1.ref(['art_galleries.json', 'museum_data.json']);
+    var jsonFiles = vue_1.ref(['미술관.json', '박물관.json', '도서관.json', '공연장.json', '문화_복지관.json']);
     var streetViewApiKey = vue_1.ref(process.env.VUE_APP_API_KEY_google);
     var street_view_api_url = vue_1.ref('https://maps.googleapis.com/maps/api/streetview');
     var showModal = vue_1.ref(false);
     var currentMarker = vue_1.ref(null);
+    var showInfoModal = vue_1.ref(false);
     var getData = function () {
         var selectedFilePath = "/api_json/" + selectedFile.value;
         axios_1["default"]
@@ -57,7 +58,6 @@ function useArtData() {
     };
     var saveMarkerData = function (marker) {
         currentMarker.value = marker;
-        console.log(currentMarker.value);
         if (!marker.streetViewImageUrl) {
             console.error('Street View 이미지 URL이 없습니다.');
         }
@@ -75,8 +75,12 @@ function useArtData() {
     var openModal = function () {
         showModal.value = true;
     };
+    var infoModal = function () {
+        showInfoModal.value = true;
+    };
     var closeModal = function () {
         showModal.value = false;
+        showInfoModal.value = false;
     };
     var goback = function () {
         window.history.back();
@@ -98,8 +102,10 @@ function useArtData() {
         showModalWithData: showModalWithData,
         goback: goback,
         showModal: showModal,
+        showInfoModal: showInfoModal,
         currentMarker: currentMarker,
         openModal: openModal,
+        infoModal: infoModal,
         closeModal: closeModal
     };
 }

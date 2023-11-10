@@ -18,11 +18,12 @@ export default function useArtData() {
   const markers = ref([] as Marker[]);
   const searchQuery = ref('');
   const selectedFile = ref('');
-  const jsonFiles = ref(['art_galleries.json','museum_data.json']);
+  const jsonFiles = ref(['미술관.json','박물관.json','도서관.json','공연장.json','문화_복지관.json']);
   const streetViewApiKey = ref(process.env.VUE_APP_API_KEY_google);
   const street_view_api_url = ref('https://maps.googleapis.com/maps/api/streetview');
   const showModal = ref(false);
   const currentMarker = ref<Marker | null>(null);
+  const showInfoModal= ref(false);
 
 
 
@@ -72,14 +73,16 @@ export default function useArtData() {
 
   const saveMarkerData = (marker: Marker): void => {
     currentMarker.value = marker;
-    console.log(currentMarker.value);
-    
+
     if (!marker.streetViewImageUrl) {
       console.error('Street View 이미지 URL이 없습니다.');
-    } 
+    }
+    
+    
   };
   
   const showModalWithData = (): void => {
+    
     showModal.value = true;
   
     const imgElement: HTMLImageElement | null = document.getElementById('streetview-image') as HTMLImageElement;
@@ -95,8 +98,13 @@ export default function useArtData() {
     showModal.value = true;
   };
 
+  const infoModal = () => {
+    showInfoModal.value = true;
+  };
+
   const closeModal = () => {
     showModal.value = false;
+    showInfoModal.value=false;
   };
 
   const goback = () => {
@@ -120,8 +128,10 @@ export default function useArtData() {
     showModalWithData,
     goback,
     showModal,
+    showInfoModal,
     currentMarker,
     openModal,
-    closeModal,
+    infoModal,
+    closeModal
   };
 }

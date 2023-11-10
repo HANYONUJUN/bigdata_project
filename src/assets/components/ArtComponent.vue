@@ -1,13 +1,16 @@
 <template>
  <div class="selected_input">
+  <div class="selected_input_content">
   <span id="json_title"></span>
-
+  <i class="bi bi-building" id="building"></i>
   <select id="jsonFile" v-model="selectedFile">
      <option v-for="file in jsonFiles" :value="file">{{ file.replace('.json', '') }}</option>
   </select>
 
+  <i class="bi bi-compass"></i>
   <span id="location_title"></span> 
     <input id="location" v-model="searchQuery" placeholder="지역 검색" @keyup.enter="searchLocation" />
+  </div>
 </div>
 
  <div id="map" ref="map">
@@ -33,17 +36,19 @@
     </LMap>
   </div>
 
-
   <div class="meun_bar">
     <button type="button" @click="goback" id="back-btn">
       <i class="bi bi-house-door"></i>
     </button>
 
     <button type="button" @click="openModal" id="modal-btn">
-      <i class="bi bi-house-door"></i>
+      <i class="bi bi-geo-alt"></i>
+    </button>
+
+    <button type="button" @click="infoModal" id="info-btn">
+      <i class="bi bi-info-circle"></i>
     </button>
   </div>
-
 
   <div v-if="showModal" class="modal">
     <div class="modal-content">
@@ -55,6 +60,15 @@
     </div>
   </div>
 
+  <div v-if="showInfoModal" class="info-modal">
+    <div class="modal-content">
+      <span class="close-button" @click="closeModal">&times;</span>
+      <div class="info-content">
+        <h2>사용방법</h2>
+        <p></p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
