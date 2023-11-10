@@ -1,0 +1,72 @@
+[
+    {
+        "name": "가양5종합사회복지관",
+        "tel": "02-2668-4603~4",
+        "home": "http://www.gy5welfare.or.kr/gnu/",
+        "latitude": 37.56424398132652,
+        "longitude": 126.85349688162131
+    },
+    {
+        "name": "가평꽃동네",
+        "tel": "031-589-0114",
+        "home": "http://www.kkotgp.or.kr/main.php",
+        "latitude": 37.88497441659138,
+        "longitude": 127.35018343439769
+    },
+    {
+        "name": "가평문화예술회관",
+        "tel": "031-8078-8076 ",
+        "home": "http://www.gpc.or.kr/",
+        "latitude": 37.82422744212448,
+        "longitude": 127.50852446685303
+    },
+    {
+        "name": "각화문화의집",
+        "tel": "062-265-9336~7",
+        "home": "http://www.bgable.kr/munhwa.php",
+        "latitude": 35.1830306263,
+        "longitude": 126.932484623
+    },
+    {
+        "name": "갈산종합사회복지관",
+        "tel": "032-515-8186",
+        "home": "http://www.galsan.or.kr/",
+        "latitude": 37.51305148919149,
+        "longitude": 126.72772636115839
+    },
+    {
+        "name": "강남구민회관",
+        "tel": "02-2176-0891",
+        "home": null,
+        "latitude": 37.4938869966,
+        "longitude": 127.064270375
+    },
+    {
+        "name": "강남문화원",
+        "tel": "02-3454-1517",
+        "home": "http://www.sgnc.or.kr/",
+        "latitude": 37.496476117320626,
+        "longitude": 127.03202264829619
+    },
+    {
+        "name": "강동문화복지회관 천생아트홀",
+        "tel": "054-480-2990",
+        "home": "https://www.gumi.go.kr/artsgd/main.do",
+        "latitude": 36.09010991003691,
+        "longitude": 128.45464350121094
+    },
+    {
+        "name": "강릉단오문화관",
+        "tel": "033-660-3940",
+        "home": "https://www.gn.go.kr/dano/index.do",
+        "latitude": 37.74837031449519,
+        "longitude": 128.89483181293474
+    },
+    {
+        "name": "강릉문화원",
+        "tel": "033-648-3014",
+        "home": "http://www.gncc.or.kr/",
+        "latitude": 37.758781278100685,
+        "longitude": 128.87388479147666
+    }
+]

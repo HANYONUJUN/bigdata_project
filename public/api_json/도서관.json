@@ -1,0 +1,72 @@
+[
+    {
+        "name": "KCDF 아카이브 센터",
+        "tel": "02-733-9042",
+        "home": "http://library.kcdf.kr/libeka_web2/",
+        "latitude": 37.57400824946774,
+        "longitude": 126.9841150077854
+    },
+    {
+        "name": "LG상남도서관",
+        "tel": "02-708-3700",
+        "home": "http://www.lg.or.kr",
+        "latitude": 37.57973682648067,
+        "longitude": 126.9884667196638
+    },
+    {
+        "name": "가락몰도서관",
+        "tel": "02-3435-0950",
+        "home": "http://www.splib.or.kr/spalib/index.jsp",
+        "latitude": 37.495095065162936,
+        "longitude": 127.11544562301945
+    },
+    {
+        "name": "가수원도서관",
+        "tel": "042-288-4770",
+        "home": "http://www.gasuwonlib.or.kr/flow/",
+        "latitude": 36.30184168377155,
+        "longitude": 127.34878193820919
+    },
+    {
+        "name": "가양도서관",
+        "tel": "02-3665-8797",
+        "home": "http://lib.gangseo.seoul.kr/index.jsp",
+        "latitude": 37.559451191162964,
+        "longitude": 126.86527125715308
+    },
+    {
+        "name": "가오도서관",
+        "tel": "042-259-7051",
+        "home": "https://www.donggu.go.kr/dg/lib/contents/628",
+        "latitude": 36.31205150684477,
+        "longitude": 127.4548566074933
+    },
+    {
+        "name": "가온도서관(구.중구 구립도서관)",
+        "tel": "02-2230-2921~2",
+        "home": "https://www.e-junggulib.or.kr/SJGL/Info/Intro/jglib01.csp?HLOC=SJGL&COUNT=2y12GWc800&Kor=1",
+        "latitude": 37.556448404419065,
+        "longitude": 127.01085347029175
+    },
+    {
+        "name": "가창면 참꽃작은도서관",
+        "tel": "053-760-7731",
+        "home": "http://www.dalseong.daegu.kr/new/culture/html/page.html?mc=1924",
+        "latitude": 35.8023184645,
+        "longitude": 128.623413178
+    },
+    {
+        "name": "가평군립청평도서관",
+        "tel": "031-580-4331~4",
+        "home": "http://www.gaplib.go.kr/intro/menu/10018/contents/40012/contents.do",
+        "latitude": 37.739524520752354,
+        "longitude": 127.42419983259941
+    },
+    {
+        "name": "가평군조종도서관",
+        "tel": "031-580-4301~3",
+        "home": "http://www.gaplib.go.kr/intro/menu/10023/contents/40016/contents.do",
+        "latitude": 37.81830466606499,
+        "longitude": 127.35306531646056
+    }
+]

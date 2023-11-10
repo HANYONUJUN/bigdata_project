@@ -1,0 +1,72 @@
+[
+    {
+        "name": " 장로회신학대학교한경직기념예배당",
+        "tel": " 02-450-5409",
+        "home": "https://www.puts.ac.kr/www/main/kor/_main/Default.asp",
+        "latitude": 37.54986021255829,
+        "longitude": 127.10330823245275
+    },
+    {
+        "name": "1m클래식아트홀",
+        "tel": "02-743-5001",
+        "home": "http://1mclassic.com/wrps/?page_id=297",
+        "latitude": 37.5827502576,
+        "longitude": 127.003609284
+    },
+    {
+        "name": "2001아울렛 키즈홀 수원남문점",
+        "tel": "031-230-7300",
+        "home": "https://www.facebook.com/2001kidshall/",
+        "latitude": 37.2744384118,
+        "longitude": 127.021165681
+    },
+    {
+        "name": "3.15아트센터",
+        "tel": "055-719-7800",
+        "home": "http://www.cwcf.or.kr/facility/facility_315art_intro.asp",
+        "latitude": 35.225837801054375,
+        "longitude": 128.57717677421078
+    },
+    {
+        "name": "640아트홀",
+        "tel": "070-7788-4750",
+        "home": "https://map.naver.com/v5/entry/place/38483157?c=14140656.8634241,4512898.1678410,15,0,0,0,dh",
+        "latitude": 37.527555103731515,
+        "longitude": 127.03603228875075
+    },
+    {
+        "name": "BNK부산은행조은극장 1관",
+        "tel": "1588-2757",
+        "home": "http://www.gp-gp.co.kr",
+        "latitude": 35.09834125605269,
+        "longitude": 129.0323193330811
+    },
+    {
+        "name": "BNK부산은행조은극장 2관",
+        "tel": "1588-2757",
+        "home": "http://www.gp-gp.co.kr",
+        "latitude": 35.09827663726766,
+        "longitude": 129.03227660973914
+    },
+    {
+        "name": "BeIN",
+        "tel": "064-735-0638",
+        "home": "http://www.be-in.kr/Home/Main",
+        "latitude": 33.50547835232586,
+        "longitude": 126.53473576274975
+    },
+    {
+        "name": "CJ 아지트 대학로(구 SM아트홀)",
+        "tel": "02-726-8559",
+        "home": "https://www.cjazit.org/cjazit",
+        "latitude": 37.580962674334906,
+        "longitude": 127.00398223104611
+    },
+    {
+        "name": "CKL스테이지",
+        "tel": "02-6441-3114",
+        "home": "https://venture.ckl.or.kr/event/cklStageEvent.do",
+        "latitude": 37.568581598033994,
+        "longitude": 126.98132877708233
+    }
+]

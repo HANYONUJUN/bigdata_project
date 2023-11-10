@@ -1,0 +1,72 @@
+[
+    {
+        "name": "2GIL29 GALLERY",
+        "tel": "02-6203-2015",
+        "home": "http://www.2gil29gallery.com",
+        "latitude": 37.519746957180544,
+        "longitude": 127.02147006525325
+    },
+    {
+        "name": "ARTION(아티온)",
+        "tel": "02-6080-4932",
+        "home": "http://www.theartion.com/",
+        "latitude": 37.5692641279951,
+        "longitude": 126.92838199580476
+    },
+    {
+        "name": "AZULEJO GALLERY (아줄레주 갤러리)",
+        "tel": "02-725-6810",
+        "home": "http://www.azulejo.gallery/",
+        "latitude": 37.52346981046802,
+        "longitude": 127.0467432642712
+    },
+    {
+        "name": "C아트뮤지엄(양평 숲속의 미술공원)",
+        "tel": "031-775-6945",
+        "home": "http://www.cartmuseum.com/",
+        "latitude": 37.39496118209332,
+        "longitude": 127.7378051005832
+    },
+    {
+        "name": "D뮤지엄",
+        "tel": "070-5097-0020 ",
+        "home": "http://www.daelimmuseum.org/index.do",
+        "latitude": 37.53694847048891,
+        "longitude": 127.0115238585643
+    },
+    {
+        "name": "Gallery Jireh",
+        "tel": "031) 941-4115",
+        "home": "https://www.galleryjireh.com/",
+        "latitude": 37.7874067063042,
+        "longitude": 126.69898001702357
+    },
+    {
+        "name": "JCC아트센터",
+        "tel": "02-2138-7373",
+        "home": "https://www.jeijcc.org/intro.html",
+        "latitude": 37.5871795800753,
+        "longitude": 127.00187947499445
+    },
+    {
+        "name": "JNO GALLERY",
+        "tel": "02-518-3638",
+        "home": "http://www.jnogallery.com",
+        "latitude": 37.5248739577566,
+        "longitude": 127.045291022113
+    },
+    {
+        "name": "K 현대미술관",
+        "tel": "02-2138-0952",
+        "home": "http://kmcaseoul.org/",
+        "latitude": 37.52437356921402,
+        "longitude": 127.03916435972421
+    },
+    {
+        "name": "MALONG 197 강남",
+        "tel": "02-1800-5194",
+        "home": "https://malongspace.co.kr",
+        "latitude": 37.49619259767763,
+        "longitude": 127.03090582396668
+    }
+]
