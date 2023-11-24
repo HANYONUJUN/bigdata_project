@@ -39,7 +39,6 @@ export default function useArtData() {
   const showModal = ref(false);
   const currentMarker = ref<Marker | null>(null);
   const showInfoModal= ref(false);
-  const weatherApiKey = ref(process.env.VUE_APP_API_KEY_weather);
   const weatherIcon = ref(''); 
   const showWeatherModal= ref(false);
   
@@ -91,7 +90,7 @@ export default function useArtData() {
   
   
   const searchLocation = () => {
-    const geocodingApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${searchQuery.value}&limit=1&appid=${weatherApiKey.value}`;
+    const geocodingApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${searchQuery.value}&limit=1&appid=${process.env.VUE_APP_API_KEY_weather}`;
     axios
       .get(geocodingApiUrl)
       .then((response) => {
