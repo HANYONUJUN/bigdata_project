@@ -8,7 +8,7 @@
 
   .selected_input {
     padding: 3%;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
     background-color: #dbd8d8;
   }
   .selected_input .selected_input_content {
@@ -35,10 +35,11 @@
   .selected_input #location_title {
     font-size: 15px;
   }
+
   .meun_bar {
-    margin-top: 3%;
+    margin-top: 2%;
     padding: 3%;
-    border-radius: 20px;
+    border-radius: 0px 0px 30px 30px;
     background-color: #dbd8d8;
     display: flex;
     justify-content: center;
@@ -60,7 +61,15 @@
   }
   .meun_bar #info-btn {
     width: 15%;
-    padding: 5%;
+    padding: 3%;
+    margin-top: 1%;
+    margin-left: 10%;
+    border-radius: 30px;
+    border: none;
+  }
+  .meun_bar #weather-btn {
+    width: 15%;
+    padding: 3%;
     margin-top: 1%;
     margin-left: 10%;
     border-radius: 30px;
@@ -107,13 +116,44 @@
   }
   .info-modal .info-content {
     text-align: center;
+    margin-top: -10%;
+  }
+
+  .weather-modal {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+  .weather-modal .info-content {
+    margin-top: -10%;
+    text-align: center;
+  }
+  .weather-modal #weather img {
+    width: 40%;
+    height: 80px;
+    object-fit: cover;
+  }
+  .weather-modal #weather span {
+    font-size: 30px;
+    font-weight: 600;
   }
 
   .modal-content {
     margin: auto;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #888;
-    width: 80%;
+    width: 84%;
     background-color: #fff;
+    border-radius: 20px;
+  }
+  .modal-content #data_text {
+    text-align: center;
+    margin-top: -2%;
   }
 }

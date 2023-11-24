@@ -24,13 +24,15 @@
         animation: 'bounce-in 0.5s',
         animationDelay: `${index * 0.1}s`
       }"
-      @click="saveMarkerData(marker)">
-
+     @click="saveMarkerData(marker)">
+      
+      
         <LPopup id="pop-up">
           {{ marker.name }}<br>
           {{ marker.tel }}<br>
           <a :href="marker.home" target="_blank">{{ marker.home }}</a><br>
           <img :src="marker.streetViewImageUrl" id="streetview-image"/>
+          <img v-if="marker.weatherIcon" :src="`https://openweathermap.org/img/wn/${marker.weatherIcon}.png`" alt="날씨 아이콘" />
         </LPopup>
       </LMarker>
     </LMap>
@@ -48,24 +50,48 @@
     <button type="button" @click="infoModal" id="info-btn">
       <i class="bi bi-info-circle"></i>
     </button>
+
+    <button type="button" @click="weatherModal" id="weather-btn">
+      <i class="bi bi-brightness-high"></i>
+    </button>
+
   </div>
 
+  
   <div v-if="showModal" class="modal">
     <div class="modal-content">
       <span class="close-button" @click="closeModal">&times;</span>
+      <div id="data_text">
       <h2 v-if="currentMarker">{{ currentMarker.name }}</h2>
       <p v-if="currentMarker">{{ currentMarker.tel }}</p>
       <a v-if="currentMarker" :href="currentMarker.home" target="_blank">{{ currentMarker.home }}</a>
       <img v-if="currentMarker" :src="currentMarker.streetViewImageUrl" id="streetview-image"/>
     </div>
   </div>
+</div>
 
   <div v-if="showInfoModal" class="info-modal">
     <div class="modal-content">
       <span class="close-button" @click="closeModal">&times;</span>
       <div class="info-content">
         <h2>사용방법</h2>
-        <p></p>
+        <p>1. 지도에서 원하는 위치를 검색하세요.</p>
+        <p>2. 선택한 위치에 마커가 표시됩니다.</p>
+        <p>3. 마커를 클릭하면 해당 장소의 정보를 확인할 수 있습니다.</p>
+        <p>4. 모달 창을 닫으려면 X 버튼을 클릭하세요.</p>
+      </div>
+    </div>
+  </div>
+
+  <div v-if="showWeatherModal" class="weather-modal">
+    <div class="modal-content">
+      <span class="close-button" @click="closeModal">&times;</span>
+      <div class="info-content">
+        <h2>현재 날씨</h2>
+          <div v-if="currentMarker" id="weather">
+          <img :src="currentMarker.weatherIcon"><br>
+          <span>{{ currentMarker.temperature }}°C</span>
+        </div>
       </div>
     </div>
   </div>
@@ -73,12 +99,11 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { LMap, LTileLayer, LMarker, LPopup } from '@vue-leaflet/vue-leaflet';
+import { LMap, LTileLayer, LMarker, LPopup, LPolyline} from '@vue-leaflet/vue-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../scss/art.scss';
 import useArtData from '../data/useData'; 
-import { marker } from 'leaflet';
-import { Marker } from '@vue-leaflet/vue-leaflet/dist/src/functions';
+
 
 export default defineComponent({
   components: {
@@ -86,6 +111,7 @@ export default defineComponent({
     LTileLayer,
     LMarker,
     LPopup,
+    LPolyline,
   },
 
   setup() {
