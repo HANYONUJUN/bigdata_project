@@ -107,7 +107,7 @@ function useArtData() {
         }); })["catch"](function (error) { return console.error(error); });
     };
     var getWeatherIcon = function (marker) {
-        var forecastApiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + marker.latitude + "&lon=" + marker.longitude + "&units=metric&appid=" + process.env.VUE_APP_API_KEY_weather;
+        var forecastApiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + marker.latitude + "&lon=" + marker.longitude + "&units=metric&appid=" + weatherApiKey.value;
         axios_1["default"].get(forecastApiUrl)
             .then(function (response) {
             var iconId = response.data.weather[0].icon;
@@ -194,7 +194,6 @@ function useArtData() {
         showWeatherModal.value = true;
     };
     var closeModal = function () {
-        currentMarker.value = null;
         showModal.value = false;
         showInfoModal.value = false;
         showWeatherModal.value = false;

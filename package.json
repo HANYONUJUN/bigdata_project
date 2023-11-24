@@ -23,6 +23,8 @@
     "vue": "^3.3.8",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.2.5",
+    "vue2-google-maps": "^0.10.7",
+    "vue3-google-map": "^0.18.0",
     "vue3-leaflet": "^1.0.48",
     "xml2js": "^0.6.2"
   },

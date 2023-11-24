@@ -6,7 +6,10 @@ import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 
 
-createApp(App).use(router).use(BootstrapVue3).mount('#app')
+createApp(App).use(router).use(BootstrapVue3)
+
+
+.mount('#app')
 
 
 
