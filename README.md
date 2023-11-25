@@ -5,8 +5,7 @@
 <li>Github</li>
 <li>google colab</li>
 
-# 사용기술
-
+<h1>사용기술</h1>
 <h2>Backend</h2>
 <li>python</li>
 
