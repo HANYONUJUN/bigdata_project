@@ -27,4 +27,16 @@
 </p>
 
 <h1>시행 결과</h1>
+![빅데이터 프로젝트 메인 화면](https://github.com/HANYONUJUN/bigdata_project/assets/104452243/b30a4eab-435f-40f0-b893-112f83cbacbb)
+
+![빅데이터 프로젝트 지도](https://github.com/HANYONUJUN/bigdata_project/assets/104452243/7228729d-c215-46ae-9fd1-14cf0b364177)
+
+![지도 마커 및 이미지](https://github.com/HANYONUJUN/bigdata_project/assets/104452243/35ad265a-cc48-4a92-8783-660319e3a224)
+
+![확대](https://github.com/HANYONUJUN/bigdata_project/assets/104452243/99095b64-d8ba-40a9-a369-dfa915363e9d)
+
+![날씨](https://github.com/HANYONUJUN/bigdata_project/assets/104452243/804ba3c5-b6e6-4a91-881d-373d8dc2ca5a)
+
+
+
 
