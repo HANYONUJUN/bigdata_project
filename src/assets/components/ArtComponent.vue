@@ -54,7 +54,6 @@
     <button type="button" @click="weatherModal" id="weather-btn">
       <i class="bi bi-brightness-high"></i>
     </button>
-
   </div>
 
   

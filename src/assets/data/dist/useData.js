@@ -49,6 +49,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var reactivity_1 = require("@vue/reactivity");
 var axios_1 = require("axios");
+//각 데이터들을 불러오는 변수들을 선언
 function useArtData() {
     var _this = this;
     var zoom = reactivity_1.ref(13);
@@ -67,6 +68,8 @@ function useArtData() {
     var weatherApiKey = reactivity_1.ref(process.env.VUE_APP_API_KEY_weather);
     var weatherIcon = reactivity_1.ref('');
     var showWeatherModal = reactivity_1.ref(false);
+    // 선택한 파일에 대한 데이터를 가져오는 함수. 해당 파일의 경로를 생성하고 axios를 사용하여
+    // GET 요청을 보내고 응답을 처리. 데이터를 받아와 markers 배열에 객체를 생성하고 추가
     var getData = function () {
         var selectedFilePath = "/api_json/" + selectedFile.value;
         axios_1["default"]
@@ -106,6 +109,8 @@ function useArtData() {
             });
         }); })["catch"](function (error) { return console.error(error); });
     };
+    // 주어진 마커의 위도와 경도를 기반으로 openweatherMap API를 호출하여 날씨 정보를 가져오는 함수.
+    // api응답에서 날씨 아이콘과 온도 정보를 추출하여 마커 객체에 할당.
     var getWeatherIcon = function (marker) {
         var forecastApiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + marker.latitude + "&lon=" + marker.longitude + "&units=metric&appid=" + weatherApiKey.value;
         axios_1["default"].get(forecastApiUrl)
@@ -119,6 +124,8 @@ function useArtData() {
             console.error('API 호출 실패:', error);
         });
     };
+    // 검색어를 기반으로 OpenWeatherMap API의 지오코딩 기능을 사용하여 위치를 검색하는 함수.
+    // API를 호출하여 검색 결과를 받아와 center 값을 업데이트하고, getData 함수를 호출하여 해당 위치의 데이터를 가져옴
     var searchLocation = function () {
         var geocodingApiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=" + searchQuery.value + "&limit=1&appid=" + weatherApiKey.value;
         axios_1["default"]
@@ -134,6 +141,8 @@ function useArtData() {
             }
         })["catch"](function (error) { return console.error(error); });
     };
+    // 새로운 마커 데이터를 받아와 markers 배열에서 해당 마커를 찾아 업데이트하는 함수.
+    // 마커의 위도와 경도를 기준으로 배열에서 해당 마커를 찾고, 존재한다면 데이터를 업데이트하고, 존재하지 않는다면 새로운 마커로 추가.
     var updateMarkerData = function (newData) { return __awaiter(_this, void 0, Promise, function () {
         var index;
         return __generator(this, function (_a) {
@@ -148,6 +157,9 @@ function useArtData() {
             return [2 /*return*/];
         });
     }); };
+    // 마커 클릭 이벤트를 처리하는 함수. 
+    // 클릭한 마커의 데이터를 저장하고, showModalWithData 함수를 호출하여 모달을 열고, 
+    // getWeatherIcon 함수를 호출하여 해당 위치의 날씨 정보를 가져옴.
     var handleMarkerClick = function (marker) { return __awaiter(_this, void 0, Promise, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -161,6 +173,7 @@ function useArtData() {
             }
         });
     }); };
+    // 클릭한 마커의 데이터를 저장하는 함수. 현재 클릭한 마커의 데이터를 currentMarker에 할당.
     var saveMarkerData = function (marker) {
         var _a, _b, _c;
         if (!marker) {
@@ -174,6 +187,7 @@ function useArtData() {
             console.error('Street View 이미지 URL이 없습니다.');
         }
     };
+    // 모달을 열고, 현재 마커의 Street View 이미지 URL을 설정하여 표시하는 함수.
     var showModalWithData = function () {
         var imgElement = document.getElementById('streetview-image');
         if (imgElement && currentMarker.value && currentMarker.value.streetViewImageUrl) {
@@ -184,20 +198,25 @@ function useArtData() {
             console.error('이미지를 표시할 요소를 찾을 수 없습니다.');
         }
     };
+    // 모달을 열기 위한 함수
     var openModal = function () {
         showModal.value = true;
     };
+    // 누른 마커의 정보 모달을 열기 위한 함수
     var infoModal = function () {
         showInfoModal.value = true;
     };
+    // 선택한 마커 데이터의 날씨 기온을 확인하기 위한 날씨
     var weatherModal = function () {
         showWeatherModal.value = true;
     };
+    // 모달을 닫는 함수
     var closeModal = function () {
         showModal.value = false;
         showInfoModal.value = false;
         showWeatherModal.value = false;
     };
+    // 브라우저의 이전 페이지로 이동하는 함수
     var goback = function () {
         window.history.back();
     };
