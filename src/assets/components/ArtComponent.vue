@@ -32,7 +32,6 @@
           {{ marker.tel }}<br>
           <a :href="marker.home" target="_blank">{{ marker.home }}</a><br>
           <img :src="marker.streetViewImageUrl" id="streetview-image"/>
-          <img v-if="marker.weatherIcon" :src="`https://openweathermap.org/img/wn/${marker.weatherIcon}.png`" alt="날씨 아이콘" />
         </LPopup>
       </LMarker>
     </LMap>
