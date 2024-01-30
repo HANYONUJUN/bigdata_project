@@ -29,6 +29,8 @@
 지도 기반으로 예술회관을 찾아주는 웹 서비스를 제작해보았다.
 </p>
 
+data parser -> <a href="https://github.com/HANYONUJUN/bigdata_project_visualization">문화예술공간 api에 대한 데이터 파싱 및 가공에 대한 내용</a>
+
 <h1>시행 결과</h1>
 
 ![빅데이터 프로젝트 메인 화면](https://github.com/HANYONUJUN/bigdata_project/assets/104452243/b0081517-bf74-4e6a-a292-70d853938dff)
